@@ -63,11 +63,13 @@ export class AuthService {
               // Income
               { name: 'Salário', icon: 'salary', type: 'INCOME' },
               { name: 'Freelance', icon: 'freelance', type: 'INCOME' },
+              { name: 'Vale Alimentacao', icon: 'food', type: 'INCOME' },
               { name: 'Pix', icon: 'other', type: 'INCOME' },
               { name: 'Outro', icon: 'other', type: 'INCOME' },
               // Expense
               { name: 'Casa', icon: 'home', type: 'EXPENSE' },
               { name: 'Alimentação', icon: 'food', type: 'EXPENSE' },
+              { name: 'Farmacia', icon: 'other', type: 'EXPENSE' },
               { name: 'Educação', icon: 'education', type: 'EXPENSE' },
               { name: 'Lazer', icon: 'fun', type: 'EXPENSE' },
               { name: 'Mercado', icon: 'grocery', type: 'EXPENSE' },
