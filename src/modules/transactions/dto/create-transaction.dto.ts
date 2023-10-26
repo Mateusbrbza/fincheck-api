@@ -1,11 +1,13 @@
 import {
   IsDateString,
+  IsEnum,
   IsNotEmpty,
   IsNumber,
   IsPositive,
   IsString,
   IsUUID,
 } from 'class-validator';
+import { TransactionType } from '../entities/Transaction';
 
 export class CreateTransactionDto {
   @IsString()
@@ -30,4 +32,8 @@ export class CreateTransactionDto {
   @IsNotEmpty()
   @IsDateString()
   date: string;
+
+  @IsNotEmpty()
+  @IsEnum(TransactionType)
+  type: TransactionType;
 }
