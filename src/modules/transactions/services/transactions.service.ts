@@ -11,6 +11,7 @@ import { TransactionsRepository } from 'src/shared/database/repositories/transac
 import { ValidateBankAccountOwnershipService } from '../../bank-accounts/services/validate-bank-account-ownership.service';
 import { ValidateCategoryOwnershipService } from '../../categories/services/validate-category-ownership.service';
 import { ValidateTransactionOwnershipService } from './validate-transaction-ownership.service';
+import { filter } from 'rxjs';
 
 @Injectable()
 export class TransactionsService {
@@ -40,9 +41,15 @@ export class TransactionsService {
     });
   }
 
-  findAllByUserId(userId: string) {
+  findAllByUserId(userId: string, filters: { month: number; year: number }) {
     return this.transactionsRepo.findMany({
-      where: { userId },
+      where: {
+        userId,
+        date: {
+          gte: new Date(filters.year, filters.month),
+          lte: new Date(filters.year, filters.month),
+        },
+      },
     });
   }
 
