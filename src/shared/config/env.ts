@@ -18,7 +18,7 @@ export const env: Env = plainToInstance(Env, {
 });
 
 const errors = validateSync(env);
-console.log(errors);
+console.error(errors);
 
 if (errors.length > 0) {
   throw new Error(JSON.stringify(errors, null, 4));
